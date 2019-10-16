@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:wave/config.dart';
+import 'package:wave/wave.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -15,7 +17,21 @@ class _LoginPageState extends State<LoginPage> {
             height: 650.0,
             child: RotatedBox(
               quarterTurns: 2,
-              child: Container(),
+              child: WaveWidget(
+                config: CustomConfig(
+                  gradients: [
+                    [Colors.deepPurple, Colors.deepPurple.shade200],
+                    [Colors.indigo.shade200, Colors.purple.shade200],
+                  ],
+                  durations: [1994,10800],
+                  heightPercentages: [0.20,0.25],
+                  blur: MaskFilter.blur(BlurStyle.solid, 10),
+                  gradientBegin: Alignment.bottomCenter,
+                  gradientEnd: Alignment.topCenter,
+                ),
+                waveAmplitude: 0,
+                size: Size(double.infinity, double.infinity),
+              ),
             ),
           ),
           ListView(
