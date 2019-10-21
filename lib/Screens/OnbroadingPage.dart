@@ -75,7 +75,7 @@ class _OnbroadingPageState extends State<OnbroadingPage> {
                             if (_controller.position.haveDimensions){
                               delta = _controller.page - index;
                                y = 1 - delta.abs().clamp(0.0, 1.0);
-                            };
+                            }
                             return Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,

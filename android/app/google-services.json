@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "985912579490",
+    "firebase_url": "https://chillnews.firebaseio.com",
+    "project_id": "chillnews",
+    "storage_bucket": "chillnews.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:985912579490:android:e23786c18100012ea24efb",
+        "android_client_info": {
+          "package_name": "com.example.chillnews"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "985912579490-lm1hnbuj643te342nqvlsenkr5vd502o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJ7gako4Y6wfhI7YsqVkceK-23m_v517c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "985912579490-lm1hnbuj643te342nqvlsenkr5vd502o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

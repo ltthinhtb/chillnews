@@ -8,173 +8,88 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateMixin{
 
-  Color PrimaryColor =  Color(0xff109618);
 
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 5,
+      length: 7,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: PrimaryColor,
-          title: Text("ChillNews"),
+          backgroundColor: Colors.white60,
+          title: Text("ChillNews",style: TextStyle(color: Colors.red, fontSize: 30.0),),
           actions: <Widget>[
-            IconButton(icon: Icon(Icons.search), onPressed: null,),
-            IconButton(icon: Icon(Icons.notifications), onPressed: null)
+            IconButton(icon: Icon(Icons.speaker_notes, size: 30.0,color: Colors.grey,), onPressed: (){}),
+            IconButton(icon: Icon(Icons.search,size: 30.0,), onPressed: null),
           ],
           bottom: TabBar(
             isScrollable: true,
             indicatorColor: Colors.white,
-            indicatorWeight: 6.0,
-            onTap: (index){
-              setState(() {
-                switch (index) {
-                  case 0:
-                    PrimaryColor= Color(0xffff5722);
-                    break;
-                  case 1:
-                    PrimaryColor= Color(0xff3f51b5);
-                    break;
-                  case 2:
-                    PrimaryColor= Color(0xffe91e63);
-                    break;
-                  case 3:
-                    PrimaryColor= Color(0xff9c27b0);
-                    break;
-                  case 4:
-                    PrimaryColor= Color(0xff2196f3);
-                    break;
-                  default:
-                }
-              });
-            },
+        //    indicatorWeight: 6.0,
             tabs: <Widget>[
               Tab(
                 child: Container(
-                  child: Text('Home',style: TextStyle(fontSize: 18.0)),
+                  child: Text('Trending',style: TextStyle(fontSize: 16.0, color: Colors.grey)),
                 ),
               ),
               Tab(
                 child: Container(
-                  child: Text('Home',style: TextStyle(fontSize: 18.0),),
+                  child: Text('Du Lịch',style: TextStyle(fontSize: 16.0, color: Colors.grey),),
                 ),
               ),
               Tab(
                 child: Container(
-                  child: Text('Home',style: TextStyle(fontSize: 18.0)),
+                  child: Text('Phim',style: TextStyle(fontSize: 16.0, color: Colors.grey)),
                 ),
               ),
               Tab(
                 child: Container(
-                  child: Text('Home',style: TextStyle(fontSize: 18.0)),
+                  child: Text('Thời Trang',style: TextStyle(fontSize: 16.0, color: Colors.grey)),
                 ),
               ),
               Tab(
                 child: Container(
-                  child: Text('Home',style: TextStyle(fontSize: 18.0)),
+                  child: Text('Thể Thao',style: TextStyle(fontSize: 16.0, color: Colors.grey)),
+                ),
+              ),
+              Tab(
+                child: Container(
+                  child: Text('Dịch Vụ',style: TextStyle(fontSize: 16.0, color: Colors.grey)),
+                ),
+              ),
+              Tab(
+                child: Container(
+                  child: Text('Tình Yêu',style: TextStyle(fontSize: 16.0, color: Colors.grey)),
                 ),
               )
             ],
           ),
+        ), //backgroundColor:
+        body: TabBarView(
+          children: <Widget>[
+            
+          ],
         ),
-        drawer: new Drawer(
-          child: ListView(
-            children: <Widget>[
-              new UserAccountsDrawerHeader(
-                accountName: Text('User'),
-                accountEmail: Text('user@gmail.com'),
-                currentAccountPicture: GestureDetector(
-                  child: new CircleAvatar(
-                    backgroundColor: Colors.grey,
-                    child: Icon(Icons.person,
-                      color: Colors.white,
-                    ),
-                  ),
-                  onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
-                  },
-                ),
-                decoration: new BoxDecoration(
-                    color: Colors.blue
-                ),
-              ),
-
-              InkWell(
-                onTap:(){},
-                child: ListTile(
-                  title: Text('HomePage'),
-                  leading: Icon(Icons.home),
-                ),
-              ),
-
-              InkWell(
-                onTap:(){},
-                child: ListTile(
-                  title: Text('My accounts'),
-                  leading: Icon(Icons.person),
-                ),
-              ),
-
-              InkWell(
-                onTap:(){},
-                child: ListTile(
-                  title: Text('My Orders'),
-                  leading: Icon(Icons.shopping_basket),
-                ),
-              ),
-
-              InkWell(
-                  onTap:(){},
-                  child: ListTile(
-                    title: Text('Categoris'),
-                    leading: Icon(Icons.category),
-                  )
-              ),
-
-              InkWell(
-                  onTap:(){},
-                  child: ListTile(
-                    title: Text('Favourites'),
-                    leading: Icon(Icons.favorite),
-                  )
-              ),
-
-              Divider(),
-
-              InkWell(
-                  onTap: (){},
-                  child: ListTile(
-                    title: Text('Settings'),
-                    leading: Icon(Icons.settings),
-                  )
-              ),
-
-              InkWell(
-                  onTap: (){},
-                  child: ListTile(
-                    title: Text('About'),
-                    leading: Icon(Icons.help, color: Colors.red,),
-                  )
-              )
-
-            ],
-          ),
-        ),
-        //backgroundColor: Colors.blue,
-        body: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.only(left: 12.0, right: 12.0,top: 30.0, bottom: 8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                  ],
-                ),
-              )
-            ],
-          ),
-        ),
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: 1,
+          type: BottomNavigationBarType.fixed,
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home, size: 30.0,),title: Text(""),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.trending_up,size: 30.0,),title: Text(""),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.play_arrow,size: 30.0,),title: Text(""),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.notifications,size: 30.0,),title: Text(""),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.settings,size: 30.0,),title: Text(""),
+            )
+          ],
+        ),// Colors.blue,
       ),
     );
   }
